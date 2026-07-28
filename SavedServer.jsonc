@@ -1,0 +1,65 @@
+{
+  "name": "SavedServer",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "description": "Friendly name for the saved server"
+    },
+    "tt_link": {
+      "type": "string",
+      "description": "Optional full TeamTalk5 link (tt://) used to join"
+    },
+    "bridge_url": {
+      "type": "string",
+      "description": "WebSocket URL of the TechnoTalk bridge that relays to the real TeamTalk5 server (wss://...). Leave blank to use the built-in demo session."
+    },
+    "domain": {
+      "type": "string",
+      "description": "Server domain name or IP address"
+    },
+    "tcp_port": {
+      "type": "integer",
+      "default": 10333,
+      "description": "TCP port for the TeamTalk5 server"
+    },
+    "udp_port": {
+      "type": "integer",
+      "default": 10333,
+      "description": "UDP port for the TeamTalk5 server"
+    },
+    "username": {
+      "type": "string",
+      "description": "Username for server authentication (server account, not TechnoTalk account)"
+    },
+    "password": {
+      "type": "string",
+      "description": "Optional password for the server account"
+    },
+    "nickname": {
+      "type": "string",
+      "description": "Display nickname used on this server"
+    },
+    "last_joined_date": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "label"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

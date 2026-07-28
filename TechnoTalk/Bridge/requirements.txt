@@ -1,0 +1,7 @@
+websockets>=12.0
+
+# To enable the real TeamTalk5 backend, install TeamTalkPy AND the native
+# TeamTalk5 SDK binaries on the host, then uncomment the line below.
+# The PyPI package name for TeamTalkPy may vary — see README.md.
+# Until then the bridge runs in built-in DEMO mode (text/presence only).
+# teamtalk

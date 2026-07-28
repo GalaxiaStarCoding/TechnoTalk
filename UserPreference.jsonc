@@ -1,0 +1,80 @@
+{
+  "name": "UserPreference",
+  "type": "object",
+  "properties": {
+    "display_name": {
+      "type": "string",
+      "description": "TechnoTalk display name shown across the app"
+    },
+    "nickname": {
+      "type": "string",
+      "description": "Default nickname proposed when joining servers"
+    },
+    "status_text": {
+      "type": "string",
+      "description": "Custom status text"
+    },
+    "sound_system": {
+      "type": "string",
+      "enum": [
+        "default",
+        "web_audio",
+        "webrtc"
+      ],
+      "default": "web_audio"
+    },
+    "sound_events_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "input_device_id": {
+      "type": "string",
+      "description": "Selected microphone device id"
+    },
+    "output_device_id": {
+      "type": "string",
+      "description": "Selected speaker device id"
+    },
+    "echo_cancellation": {
+      "type": "boolean",
+      "default": true
+    },
+    "automatic_gain_control": {
+      "type": "boolean",
+      "default": true
+    },
+    "denoising": {
+      "type": "boolean",
+      "default": true
+    },
+    "notifications_sound": {
+      "type": "boolean",
+      "default": true
+    },
+    "notifications_tts": {
+      "type": "boolean",
+      "default": false
+    },
+    "onboarding_complete": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "display_name"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
